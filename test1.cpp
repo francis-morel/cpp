@@ -8,6 +8,8 @@ int obtenirInt(string message, int min, int max){
     while(nombre < min || nombre > max){
         cout << message << " (" << min << "-" << max << "): ";
         cin >> nombre;
+        cin.clear();
+        cin.ignore(1000, '\n');
         
     }
 
@@ -15,8 +17,12 @@ int obtenirInt(string message, int min, int max){
 }
 
 int main(){
-    int valeur = obtenirInt("Veuillez entrer un int", 0, 100);
+    int valeur;
+    do{
+        valeur = obtenirInt("Veuillez entrer un int", 1, 100);
 
-    cout << "Voici la valeur entrée: " << valeur << endl;
+        cout << "Voici la valeur entrée: " << valeur << endl;
+    } while (valeur != 100);
+    
     return 0;
 }
