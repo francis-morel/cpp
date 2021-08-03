@@ -20,4 +20,3 @@ int main(){
     cout << "Voici la valeur entrée: " << valeur << endl;
     return 0;
 }
-
